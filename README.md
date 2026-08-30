@@ -1,5 +1,26 @@
-# paykaro
-A full-stack digital payment platform built with Next.js and Razorpay
+# PayKaro
+
+A full-stack digital payment platform built with Next.js and Razorpay.
+
+## Overview
+
+PayKaro is a full-stack digital payment platform that allows users to securely
+create payments, complete transactions through Razorpay, and track their
+payment history from a personal dashboard.
+
+## Features
+
+- User registration and login
+- Protected dashboard
+- Create payments
+- Razorpay payment integration
+- UPI, card and net banking support through Razorpay
+- Payment verification
+- Razorpay webhook handling
+- Transaction history
+- Payment status tracking
+- Transaction details
+- Responsive dashboard
 
 ## Tech Stack
 
@@ -12,39 +33,30 @@ A full-stack digital payment platform built with Next.js and Razorpay
 - Zod
 - React Hook Form
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Application Flow
 
-## Getting Started
+Login → Dashboard → Create Payment → Razorpay Checkout → Payment Verification
+→ Webhook → Database → Transaction History
 
-First, run the development server:
+## Payment Flow
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. User enters the payment amount.
+2. Next.js backend creates a Razorpay order.
+3. Razorpay Checkout is opened.
+4. User completes the payment.
+5. Payment details are verified on the server.
+6. Razorpay webhook confirms the payment event.
+7. Transaction status is updated in PostgreSQL.
+8. Dashboard displays the updated transaction.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Project Structure
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```text
+src/
+├── app/
+├── components/
+├── lib/
+└── types/
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+prisma/
+└── schema.prisma
