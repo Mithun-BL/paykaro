@@ -51,7 +51,7 @@ Login → Dashboard → Create Payment → Razorpay Checkout → Payment Verific
 
 ## Project Structure
 
-```text
+<!-- ```text
 src/
 ├── app/
 ├── components/
@@ -59,4 +59,4 @@ src/
 └── types/
 
 prisma/
-└── schema.prisma
+└── schema.prisma -->
